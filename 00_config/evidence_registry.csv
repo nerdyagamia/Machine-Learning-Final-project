@@ -1,0 +1,8 @@
+item,value,status,evidence
+Channel order,"FZ, C3, CZ, C4",CONFIRMED,column names in every file are validated in the scan
+Subject / session IDs,,UNKNOWN,none supplied; none invented
+Signal units / reference,,UNKNOWN,none supplied
+Label ↔ file mapping,2160/2160 EEG files mapped,CONFIRMED,User confirmed in chat (2026-11-15): labels.csv rows correspond to EEG files sorted by ascending numeric file ID; keep the first N rows for the N files and exclude trailing excess rows.
+Samples per recording,2500,CONFIRMED,2160/2160 files have exactly 2500 rows
+Sampling frequency,250.0,INFERRED,median (N−1)/duration = 250.27 Hz (95% CI 250.27–250.30); 93.6% of files within ±2% of 250 Hz; 2500 rows ≈ 9.99 s
+What one CSV represents (trial / continuous),neighbouring files are statistically dependent,INFERRED,continuity ratio (median) 0.02; lag-1 ACF 0.44

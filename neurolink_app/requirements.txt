@@ -1,0 +1,17 @@
+# NeuroLink app
+streamlit>=1.50
+
+# Model runtime - versions the partners trained/saved with (see Data_for_deployment/csp_svm_baseline_meta.json).
+# The .joblib pickles an mne.decoding.CSP object, so MNE is REQUIRED to load it.
+mne==1.13.2
+scikit-learn==1.9.1
+joblib>=1.5
+numpy>=2.0
+scipy>=1.13
+pandas>=2.2
+
+# Reading uploaded .xlsx recordings (bci_preprocess.load_trial_table uses pandas.read_excel)
+openpyxl>=3.1
+
+# Time-zone database (needed on Windows for zoneinfo)
+tzdata>=2024.1

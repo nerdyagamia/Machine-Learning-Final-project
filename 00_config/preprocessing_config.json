@@ -1,0 +1,75 @@
+{
+  "sampling_rate": {
+    "value_hz": 250.0,
+    "status": "INFERRED",
+    "evidence": "median (N\u22121)/duration = 250.27 Hz (95% CI 250.27\u2013250.30); 93.6% of files within \u00b12% of 250 Hz; 2500 rows \u2248 9.99 s"
+  },
+  "bandpass_hz": [
+    3.0,
+    40.0
+  ],
+  "filter": "Butterworth order 4, zero-phase sosfiltfilt",
+  "detrend": "linear (per channel, whole recording)",
+  "notch": {
+    "hz": 50.0,
+    "evidence": "100% of retained recordings show a narrow peak at 50 Hz (= 0.2 cycles/sample at fs=250)"
+  },
+  "edge_trim_s": 0.5,
+  "per_recording_zscore": false,
+  "event_baseline_correction": "not applied (event timing unknown)",
+  "artifact_handling": "flag-only; no repair",
+  "bands_hz": {
+    "theta": [
+      4.0,
+      8.0
+    ],
+    "mu": [
+      8.0,
+      13.0
+    ],
+    "beta": [
+      13.0,
+      30.0
+    ]
+  },
+  "total_band_hz": [
+    4.0,
+    40.0
+  ],
+  "welch": {
+    "nperseg": 512,
+    "overlap": 0.5,
+    "window": "hann"
+  },
+  "repeat_handling": {
+    "exclusion_limit": null,
+    "primary_policy": "flag only; repeated samples never exclude recordings or delete/modify source files",
+    "tolerance_log_power": 0.1,
+    "method": "dose-response simulation is diagnostic/sensitivity analysis only"
+  },
+  "quality": {
+    "amp_modz": 3.5,
+    "flat_run_min": 25,
+    "rate_dev_tol": 0.02
+  },
+  "split": {
+    "strategy": "contiguous file-ID blocks + embargo",
+    "block_size": 44,
+    "embargo": 11,
+    "fractions": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "seed": 42,
+    "stratified": true,
+    "neighbours_dependent": true,
+    "decorrelation_lag": 11
+  },
+  "corr_prune": 0.95,
+  "scaler": "RobustScaler (fit on train only)",
+  "labels_verified": true,
+  "mapping_source": "User confirmed in chat (2026-11-15): labels.csv rows correspond to EEG files sorted by ascending numeric file ID; keep the first N rows for the N files and exclude trailing excess rows.",
+  "data_root": "/home/iroh/Documents/task7/Task7",
+  "random_state": 42
+}

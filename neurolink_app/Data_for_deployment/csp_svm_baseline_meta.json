@@ -1,0 +1,72 @@
+{
+  "model": "CSP + StandardScaler + SVC(probability=True)",
+  "best_params": {
+    "csp__n_components": 2,
+    "csp__reg": null,
+    "svm__C": 1,
+    "svm__kernel": "linear"
+  },
+  "input": {
+    "layout": "(n_trials, n_channels, n_times) float64/float32 AFTER bci_preprocess.preprocess_file",
+    "n_channels": 4,
+    "n_times": 2250,
+    "channels": [
+      "FZ",
+      "C3",
+      "CZ",
+      "C4"
+    ]
+  },
+  "preprocessing": {
+    "fs_hz": 250.0,
+    "bandpass_hz": [
+      3.0,
+      40.0
+    ],
+    "notch_hz": 50.0,
+    "notch_q": 30.0,
+    "filter_order": 4,
+    "edge_trim_s": 0.5,
+    "detrend": "linear",
+    "raw_rows_expected": 2500
+  },
+  "classes": {
+    "0": "Left",
+    "1": "Right"
+  },
+  "predict_proba_columns": [
+    "P(Left)",
+    "P(Right)"
+  ],
+  "test_metrics": {
+    "balanced_accuracy": 0.53125,
+    "macro_f1": 0.5089576340686005,
+    "roc_auc": 0.542500645661157,
+    "confusion_matrix": [
+      [
+        131,
+        45
+      ],
+      [
+        120,
+        56
+      ]
+    ],
+    "grouped_cv_balanced_accuracy": 0.5028823912872137,
+    "n_test": 352
+  },
+  "trained_on": {
+    "n_trials": 1533,
+    "splits": "train+val",
+    "split_source": "re-used from EDA: split_assignment.csv"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "sklearn": "1.9.1",
+    "mne": "1.13.2",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0"
+  },
+  "caveat": "sampling rate is an INFERRED working value from the EDA; confirm with the data owner"
+}
